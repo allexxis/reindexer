@@ -1,0 +1,22 @@
+{
+  "name": "reindexer",
+  "version": "1.0.0",
+  "description": "Magento2 reindexer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allexxis/reindexer.git"
+  },
+  "author": "Alexis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allexxis/reindexer/issues"
+  },
+  "homepage": "https://github.com/allexxis/reindexer#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
