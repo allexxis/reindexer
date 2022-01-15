@@ -14,15 +14,18 @@ app.post('/reindex', (req, res) => {
    if (process.env.SECRET !== password) {
       return res.send('Constraseña incorrecta');
    }
-   exec('bin/magento indexer:reindex', (error, stdout, stderr) => {
-      if (error) {
-         return res.send(`error: ${error.message}`);
+   exec(
+      'cd ../magento/ && bin/magento indexer:reindex',
+      (error, stdout, stderr) => {
+         if (error) {
+            return res.send(`error: ${error.message}`);
+         }
+         if (stderr) {
+            return res.send(`stderr: ${stderr}`);
+         }
+         return res.send(`stdout: ${stdout}`);
       }
-      if (stderr) {
-         return res.send(`stderr: ${stderr}`);
-      }
-      return res.send(`stdout: ${stdout}`);
-   });
+   );
 });
 app.listen(port, () => {
    console.log(`Example app listening at http://localhost:${port}`);
